@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liman Rapor Sistemi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-ship"></i>
+                <span>Liman Rapor Sistemi</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#anasayfa" class="nav-link">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#raporlar" class="nav-link">Raporlar</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gemiler" class="nav-link">Gemiler</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#istatistikler" class="nav-link">İstatistikler</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section id="anasayfa" class="section">
+            <div class="hero">
+                <h1>Liman Rapor Sistemi</h1>
+                <p>Liman operasyonlarınızı takip edin ve raporlayın</p>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-ship"></i>
+                        <div>
+                            <h3>45</h3>
+                            <p>Günlük Gemi</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-boxes"></i>
+                        <div>
+                            <h3>1,250</h3>
+                            <p>Konteyner</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>24/7</h3>
+                            <p>Operasyon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="raporlar" class="section">
+            <div class="container">
+                <h2>Raporlar</h2>
+                <div class="report-grid">
+                    <div class="report-card">
+                        <h3>Gemi Giriş Raporu</h3>
+                        <form class="report-form">
+                            <div class="form-group">
+                                <label for="gemi-adi">Gemi Adı:</label>
+                                <input type="text" id="gemi-adi" name="gemi-adi" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gemi-tipi">Gemi Tipi:</label>
+                                <select id="gemi-tipi" name="gemi-tipi" required>
+                                    <option value="">Seçin...</option>
+                                    <option value="konteyner">Konteyner Gemisi</option>
+                                    <option value="tanker">Tanker</option>
+                                    <option value="kargo">Kargo Gemisi</option>
+                                    <option value="yolcu">Yolcu Gemisi</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="gelis-tarihi">Geliş Tarihi:</label>
+                                <input type="datetime-local" id="gelis-tarihi" name="gelis-tarihi" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rihti">Rıhtım:</label>
+                                <select id="rihti" name="rihti" required>
+                                    <option value="">Seçin...</option>
+                                    <option value="1">Rıhtım 1</option>
+                                    <option value="2">Rıhtım 2</option>
+                                    <option value="3">Rıhtım 3</option>
+                                    <option value="4">Rıhtım 4</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-primary">Rapor Oluştur</button>
+                        </form>
+                    </div>
+                    
+                    <div class="report-card">
+                        <h3>Yük Boşaltma Raporu</h3>
+                        <form class="report-form">
+                            <div class="form-group">
+                                <label for="yuk-tipi">Yük Tipi:</label>
+                                <select id="yuk-tipi" name="yuk-tipi" required>
+                                    <option value="">Seçin...</option>
+                                    <option value="konteyner">Konteyner</option>
+                                    <option value="dökme">Dökme Yük</option>
+                                    <option value="genel">Genel Kargo</option>
+                                    <option value="sivı">Sıvı Yük</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="miktar">Miktar (Ton):</label>
+                                <input type="number" id="miktar" name="miktar" min="0" step="0.1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="baslangic-saati">Başlangıç Saati:</label>
+                                <input type="datetime-local" id="baslangic-saati" name="baslangic-saati" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bitis-saati">Bitiş Saati:</label>
+                                <input type="datetime-local" id="bitis-saati" name="bitis-saati">
+                            </div>
+                            <button type="submit" class="btn-primary">Rapor Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gemiler" class="section">
+            <div class="container">
+                <h2>Mevcut Gemiler</h2>
+                <div class="ships-grid">
+                    <div class="ship-card">
+                        <div class="ship-header">
+                            <h3>MSC Istanbul</h3>
+                            <span class="status status-loading">Yükleniyor</span>
+                        </div>
+                        <div class="ship-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Rıhtım 1</p>
+                            <p><i class="fas fa-clock"></i> 14:30 - 22:00</p>
+                            <p><i class="fas fa-boxes"></i> 450 Konteyner</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ship-card">
+                        <div class="ship-header">
+                            <h3>Maersk Line</h3>
+                            <span class="status status-unloading">Boşaltılıyor</span>
+                        </div>
+                        <div class="ship-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Rıhtım 2</p>
+                            <p><i class="fas fa-clock"></i> 08:00 - 16:30</p>
+                            <p><i class="fas fa-boxes"></i> 320 Konteyner</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ship-card">
+                        <div class="ship-header">
+                            <h3>COSCO Shipping</h3>
+                            <span class="status status-waiting">Bekliyor</span>
+                        </div>
+                        <div class="ship-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Demirleme</p>
+                            <p><i class="fas fa-clock"></i> 19:00 - TBD</p>
+                            <p><i class="fas fa-boxes"></i> 280 Konteyner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="istatistikler" class="section">
+            <div class="container">
+                <h2>İstatistikler</h2>
+                <div class="stats-grid">
+                    <div class="stats-card">
+                        <h3>Günlük Özet</h3>
+                        <div class="chart-placeholder">
+                            <canvas id="daily-chart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-card">
+                        <h3>Aylık Performans</h3>
+                        <div class="performance-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Toplam Gemi</span>
+                                <span class="metric-value">1,245</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Konteyner Hacmi</span>
+                                <span class="metric-value">45,678</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Ortalama Bekleme</span>
+                                <span class="metric-value">2.5 saat</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Verimlilik</span>
+                                <span class="metric-value">94%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Liman Rapor Sistemi. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
